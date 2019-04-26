@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux'; 
 import PropTypes from 'prop-types';
 import {createPost} from '../actions/postActions';
@@ -34,28 +34,36 @@ class  PostForm extends Component {
 
     render() { 
         return ( 
-            <div>
-                <h1>Add post</h1>
+            <Fragment>
+
+            <div className="card container form-card">
+
+                <div className="card-body">
+
+               
+                <h1 className="card-title">Add post</h1>
                 <form onSubmit={this.onSubmit}>
 
                     <div>
-                        <label>Title</label>
+                        <label>Title</label><br/>
                         <input type="text" name="title" onChange={this.onChange} value={this.state.title}/>
                     </div>
 
                     <br/>
 
                     <div>
-                        <label>Body</label>
+                        <label>Body</label> <br/>
                         <textarea name="body" onChange={this.onChange} value={this.state.body}/>
                     </div>
                     <br/>
 
-                    <button type="submit">Submit</button>
+                    <button type="submit" className="btn btn-success">Submit</button>
 
 
                 </form>
+                </div>
             </div>
+            </Fragment>
          );
     }
 }
