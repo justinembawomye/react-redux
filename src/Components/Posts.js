@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import {getPosts} from '../actions/postActions';
 import PropTypes from 'prop-types';
@@ -33,10 +33,15 @@ class  Posts extends Component {
         // const postItems = 'posts'
        
         return (
-            <div>
-                <h1>Posts</h1>
+            <Fragment>
+            <div className=" container card card-posts">
+                <div className="card-body">
+                <h1>Available Posts</h1>
+                </div>
+                
                 {postItems}
             </div>
+            </Fragment>
          );
     }
 }
